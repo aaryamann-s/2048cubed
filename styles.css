@@ -1,0 +1,48 @@
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#game-container {
+    height: 500px;
+    width: 500px;
+    background-color: #bbada0;
+    border-radius: 5px;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.game-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.game-tile {
+    background-color: #EEE4DA59;
+    color: #f9f6f2;
+    border-radius: 5px;
+    font-family: "Helvetica";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 50px;
+    overflow: hidden;
+    transition: top 0.1s, left 0.1s;
+}
+
+.game-tile[value]::after {
+    content: attr(value);
+}
+
+#score::after {
+    content: attr(value)
+}
